@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Git 起步 · 一页学会版本控制</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top"><span class="brand-mark">⌘</span> git / 起步</a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="#concepts">概念</a>
+      <a href="#workflow">工作流</a>
+      <a href="#commands">命令速查</a>
+      <a href="#quiz">小测验</a>
+    </nav>
+    <button class="theme-button" id="themeToggle" aria-label="切换主题">◐</button>
+  </header>
+
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> LEARN BY DOING</p>
+        <h1>把代码的<br /><em>每一步</em>都记下来。</h1>
+        <p class="hero-text">Git 是你的本地时间机器，GitHub 是和世界协作的地方。用一页内容，建立从修改到分享的完整心智模型。</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#workflow">开始学习 <span>↓</span></a>
+          <a class="text-link" href="#commands">先看命令 →</a>
+        </div>
+      </div>
+      <div class="terminal-card" aria-label="终端示例">
+        <div class="terminal-head"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="terminal-title">~/my-project</span></div>
+        <div class="terminal-body">
+          <p><span class="prompt">$</span> git init</p>
+          <p class="muted">Initialized empty Git repository</p>
+          <p><span class="prompt">$</span> git add .</p>
+          <p><span class="prompt">$</span> git commit -m <span class="string">"我的第一次提交"</span></p>
+          <p class="success">✓ [main 8a31f2c] 我的第一次提交</p>
+          <p><span class="prompt">$</span> <span class="cursor"></span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats section-shell" aria-label="学习要点">
+      <div><strong>01</strong><span>个核心概念</span></div>
+      <div><strong>04</strong><span>步日常工作流</span></div>
+      <div><strong>12</strong><span>条常用命令</span></div>
+      <div><strong>∞</strong><span>次安心回退</span></div>
+    </section>
+
+    <section id="concepts" class="section-shell content-section">
+      <div class="section-intro"><p class="eyebrow"><span></span> THE MENTAL MODEL</p><h2>先搞懂这<br /><em>三个地方</em></h2></div>
+      <div class="concept-grid">
+        <article class="concept-card accent-purple"><div class="card-number">01</div><div class="icon">⌂</div><h3>工作区<br /><small>Working Directory</small></h3><p>你正在编辑的文件所在的地方。所有改变，都从这里开始。</p><code>你看到的项目文件</code></article>
+        <article class="concept-card accent-orange"><div class="card-number">02</div><div class="icon">＋</div><h3>暂存区<br /><small>Staging Area</small></h3><p>准备下一次提交的“购物车”。你可以选择只提交部分改动。</p><code>git add &lt;文件名&gt;</code></article>
+        <article class="concept-card accent-green"><div class="card-number">03</div><div class="icon">●</div><h3>仓库<br /><small>Repository</small></h3><p>项目的完整历史档案。每次提交，都是一个可回到的时间点。</p><code>git commit -m "说明"</code></article>
+      </div>
+    </section>
+
+    <section id="workflow" class="workflow-section">
+      <div class="section-shell workflow-inner">
+        <div class="section-intro"><p class="eyebrow light"><span></span> THE DAILY LOOP</p><h2>你的第一个<br /><em>安全循环</em></h2><p class="intro-note">修改 → 暂存 → 提交 → 分享。重复这个小循环，你就已经在使用 Git 了。</p></div>
+        <div class="flow-list">
+          <div class="flow-item"><span class="flow-index">01</span><div><h3>修改 <span>edit</span></h3><p>写代码、改文档、修复一个 bug。</p></div><b>⌁</b></div>
+          <div class="flow-item"><span class="flow-index">02</span><div><h3>暂存 <span>stage</span></h3><p>告诉 Git：这些改变准备好了。</p><code>git add .</code></div><b>＋</b></div>
+          <div class="flow-item"><span class="flow-index">03</span><div><h3>提交 <span>commit</span></h3><p>留下一个有意义的版本快照。</p><code>git commit -m "完成登录页"</code></div><b>●</b></div>
+          <div class="flow-item"><span class="flow-index">04</span><div><h3>分享 <span>push</span></h3><p>把本地提交上传到 GitHub。</p><code>git push origin main</code></div><b>↗</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="commands" class="section-shell content-section commands-section">
+      <div class="section-intro"><p class="eyebrow"><span></span> POCKET REFERENCE</p><h2>命令不需要<br /><em>死记硬背</em></h2></div>
+      <div class="command-panel">
+        <div class="command-tabs" role="tablist"><button class="active" data-filter="all">全部</button><button data-filter="start">开始</button><button data-filter="track">追踪</button><button data-filter="share">协作</button></div>
+        <div class="command-list">
+          <button class="command-row" data-type="start" data-copy="git init"><span class="command-icon">✦</span><code>git init</code><span>在当前目录创建 Git 仓库</span><b>复制</b></button>
+          <button class="command-row" data-type="track" data-copy="git status"><span class="command-icon">?</span><code>git status</code><span>查看文件当前状态</span><b>复制</b></button>
+          <button class="command-row" data-type="track" data-copy="git add ."><span class="command-icon">＋</span><code>git add .</code><span>把所有改动放入暂存区</span><b>复制</b></button>
+          <button class="command-row" data-type="track" data-copy="git log --oneline"><span class="command-icon">≡</span><code>git log --oneline</code><span>快速查看提交历史</span><b>复制</b></button>
+          <button class="command-row" data-type="share" data-copy="git clone &lt;url&gt;"><span class="command-icon">↓</span><code>git clone &lt;url&gt;</code><span>下载一个远程仓库</span><b>复制</b></button>
+          <button class="command-row" data-type="share" data-copy="git pull"><span class="command-icon">↙</span><code>git pull</code><span>拉取并合并远程更新</span><b>复制</b></button>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz" class="quiz-section section-shell">
+      <div class="quiz-card"><div><p class="eyebrow light"><span></span> QUICK CHECK</p><h2>测一下你<br /><em>记住了吗？</em></h2></div><div class="quiz-question"><p>哪个命令会把本地提交上传到 GitHub？</p><div class="quiz-options"><button data-answer="wrong">git add .</button><button data-answer="correct">git push</button><button data-answer="wrong">git status</button></div><p class="quiz-result" id="quizResult" aria-live="polite"></p></div></div>
+    </section>
+  </main>
+
+  <footer class="section-shell footer"><span>git / 起步</span><span>learn · commit · share</span><a href="#top">回到顶部 ↑</a></footer>
+  <script src="script.js"></script>
+</body>
+</html>
